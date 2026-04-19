@@ -1,24 +1,28 @@
-import Image from "next/image";
 import Link from "next/link";
+import { MarketingLogo } from "@/components/ui/marketing-logo";
 import { Nav } from "@/components/layout/nav";
+import { content } from "@/lib/site";
+import { gradients } from "@/lib/tokens";
 
 export function Header() {
   return (
-    <header className="border-b border-neutral-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between md:gap-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/images/logo.svg"
-            alt="EddyAgent"
-            width={32}
-            height={32}
-            priority
-          />
-          <span className="text-sm font-semibold tracking-tight text-neutral-900">
-            EddyAgent
-          </span>
+    <header className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/5 bg-bg-base/90 px-6 py-4 backdrop-blur-md lg:px-12">
+      <MarketingLogo />
+      <Nav />
+      <div className="hidden items-center gap-4 lg:flex">
+        <button
+          type="button"
+          className="border border-white/20 px-6 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/5"
+        >
+          {content.header.loginLabel}
+        </button>
+        <Link
+          href={content.links.playerSurvey}
+          className="px-6 py-2 text-xs font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90"
+          style={{ backgroundImage: gradients.brand }}
+        >
+          {content.header.signupLabel}
         </Link>
-        <Nav />
       </div>
     </header>
   );

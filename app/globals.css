@@ -2,4 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Globale Basis; komponentennahe Styles folgen bei Bedarf in den Modulen. */
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg-base:    #05080f;
+  --color-bg-card:    #0a101a;
+  --color-brand-green:#9bf11c;
+  --color-brand-blue: #2589ff;
+  --color-border:     #1f2937;
+  --color-text-body:  #9ca3af;
+  --color-text-muted: #6b7280;
+
+  /* Gradients */
+  --gradient-brand:    linear-gradient(to right, #2589ff, #9bf11c);
+  --gradient-green-cta:linear-gradient(to right, #9bf11c, #4ADE80);
+
+  /* Container */
+  --container-max-w:  1400px;
+  --container-px:     1.5rem;     /* base (px-6) */
+  --container-px-lg:  3rem;       /* lg (px-12) */
+
+  /* Section vertical rhythm */
+  --section-pb:       6rem;       /* pb-24 */
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    background-color: var(--color-bg-base);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-green);
+    color: #000000;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Container helper */
+  .container-brand {
+    max-width: var(--container-max-w);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  @media (min-width: 1024px) {
+    .container-brand {
+      padding-inline: var(--container-px-lg);
+    }
+  }
+
+  /* Accent bar used in SectionHeader */
+  .accent-bar-green { @apply w-1 h-5 bg-brand-green flex-shrink-0; }
+  .accent-bar-blue  { @apply w-1 h-5 bg-brand-blue  flex-shrink-0; }
+
+  /* Gradient text */
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

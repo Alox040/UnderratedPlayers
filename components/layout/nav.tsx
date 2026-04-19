@@ -1,25 +1,40 @@
-import Link from "next/link";
+"use client";
 
-const links = [
-  { href: "/leistungen", label: "Leistungen" },
-  { href: "/ueber-uns", label: "Über uns" },
-  { href: "/talent-bewerben", label: "Talent bewerben" },
-  { href: "/vereine", label: "Vereine" },
-  { href: "/kontakt", label: "Kontakt" },
-] as const;
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { content } from "@/lib/site";
+import { cn } from "@/lib/utils";
+
+function linkActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Nav() {
+  const pathname = usePathname();
+
   return (
-    <nav aria-label="Hauptnavigation" className="flex flex-wrap justify-end gap-4 md:gap-6">
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="text-sm font-medium text-neutral-700 transition hover:text-neutral-900"
-        >
-          {link.label}
-        </Link>
-      ))}
+    <nav
+      aria-label="Hauptnavigation"
+      className="hidden items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-white lg:flex"
+    >
+      {content.nav.map(({ href, label }) => {
+        const active = linkActive(pathname, href);
+        return (
+          <Link
+            key={`${href}-${label}`}
+            href={href}
+            className={cn(
+              "border-b-2 pb-1 transition-colors",
+              active
+                ? "border-brand-green text-white"
+                : "border-transparent text-white hover:text-white/70",
+            )}
+          >
+            {label}
+          </Link>
+        );
+      })}
     </nav>
   );
 }
