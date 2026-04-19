@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globale Basis; komponentennahe Styles folgen bei Bedarf in den Modulen. */
