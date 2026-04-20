@@ -3,17 +3,20 @@ import { Card } from "@/components/ui/card";
 
 export function TestimonialsSection() {
   return (
-    <section className="border-y border-neutral-100 bg-neutral-50 py-16">
-      <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-2xl font-semibold tracking-tight text-neutral-900">
+    <section className="border-y border-white/10 bg-bg-base py-16 text-white">
+      <div className="mx-auto max-w-container px-6 lg:px-12">
+        <h2 className="text-2xl font-semibold tracking-tight text-white">
           Stimmen aus dem Spiel
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {testimonials.map((t) => (
-            <Card key={t.id}>
-              <p className="text-neutral-800">&ldquo;{t.quote}&rdquo;</p>
-              <p className="mt-4 text-sm text-neutral-500">
-                {t.author} — {t.context}
+            <Card
+              key={t.id}
+              className="rounded-xl border-white/5 bg-bg-card p-6 shadow-none"
+            >
+              <p className="text-white">&ldquo;{t.quote}&rdquo;</p>
+              <p className="mt-4 text-sm text-text-body">
+                {t.author} - {t.context}
               </p>
             </Card>
           ))}

@@ -20,7 +20,7 @@ export function FeaturesSection() {
             </div>
             <Link
               href={features.talentsCta.href}
-              className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-brand-green hover:underline"
+              className="flex items-center gap-1 text-cap font-bold uppercase tracking-widest text-brand-green hover:underline"
             >
               {features.talentsCta.label} <ChevronRight size={14} aria-hidden />
             </Link>
@@ -28,13 +28,13 @@ export function FeaturesSection() {
 
           <div className="relative">
             <div
-              className="absolute top-1/3 -left-4 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#1f2937] transition-colors hover:bg-white/20"
+              className="absolute top-1/3 -left-4 z-10 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#1f2937] transition-colors hover:bg-white/20 md:flex"
               aria-hidden
             >
               <ChevronLeft size={16} className="text-white" />
             </div>
             <div
-              className="absolute top-1/3 -right-4 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#1f2937] transition-colors hover:bg-white/20"
+              className="absolute top-1/3 -right-4 z-10 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#1f2937] transition-colors hover:bg-white/20 md:flex"
               aria-hidden
             >
               <ChevronRight size={16} className="text-white" />
@@ -48,7 +48,7 @@ export function FeaturesSection() {
                 >
                   <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-[#152132] to-bg-card">
                     <div className="absolute left-4 top-4 z-20">
-                      <span className="rounded-sm bg-brand-green px-2 py-1 text-[10px] font-black text-black">
+                      <span className="rounded-sm bg-brand-green px-2 py-1 text-label font-black text-black">
                         {player.position}
                       </span>
                     </div>
@@ -56,7 +56,7 @@ export function FeaturesSection() {
                       <div className="text-3xl font-black text-brand-green drop-shadow-md">
                         {player.rating}
                       </div>
-                      <div className="text-[8px] font-bold uppercase tracking-widest text-white/70">
+                      <div className="text-2xs font-bold uppercase tracking-widest text-white/70">
                         {features.ratingLabel}
                       </div>
                     </div>
@@ -75,7 +75,7 @@ export function FeaturesSection() {
                     <h4 className="mb-1 text-lg font-black uppercase tracking-wide">
                       {player.name}
                     </h4>
-                    <div className="mb-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-white/50">
+                    <div className="mb-4 flex items-center gap-2 text-label font-bold uppercase tracking-wider text-white/50">
                       {player.age} YEARS {features.ageCountrySeparator} {player.country}
                     </div>
                     <p className="mb-6 min-h-[48px] text-xs leading-relaxed text-white/60">
@@ -83,7 +83,7 @@ export function FeaturesSection() {
                     </p>
                     <Link
                       href={player.profileHref}
-                      className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-green hover:underline"
+                      className="flex items-center gap-2 text-cap font-bold uppercase tracking-widest text-brand-green hover:underline"
                     >
                       {player.profileCtaLabel} <ChevronRight size={14} aria-hidden />
                     </Link>
@@ -102,7 +102,7 @@ export function FeaturesSection() {
             </h3>
           </div>
 
-          <div className="h-[calc(100%-4rem)] rounded-xl border border-white/5 bg-bg-card p-8">
+          <div className="rounded-xl border border-white/5 bg-bg-card p-8 xl:h-[calc(100%-4rem)]">
             <p className="mb-8 text-sm leading-relaxed text-white/80">
               {features.missionDescription}
             </p>
@@ -130,7 +130,7 @@ export function FeaturesSection() {
 
             <Link
               href={features.missionCta.href}
-              className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-green hover:underline"
+              className="flex items-center gap-2 text-cap font-bold uppercase tracking-widest text-brand-green hover:underline"
             >
               {features.missionCta.label} <ChevronRight size={14} aria-hidden />
             </Link>

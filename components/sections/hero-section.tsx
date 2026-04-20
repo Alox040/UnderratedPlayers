@@ -9,7 +9,7 @@ export function HeroSection() {
   const { hero } = homeContent;
 
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center overflow-hidden pb-20 pt-12">
+    <section className="relative flex min-h-[90vh] w-full items-center overflow-hidden pb-20 pt-32">
       <div className="absolute inset-0 z-0">
         <Image
           src={marketingHeroImage}
@@ -44,13 +44,13 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-4">
             <Link
               href={hero.primaryCta.href}
-              className="flex items-center gap-2 bg-brand-green px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90 sm:text-xs"
+              className="flex min-h-[44px] items-center gap-2 bg-brand-green px-6 py-3 text-cap font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90 sm:text-xs"
             >
               {hero.primaryCta.label} <ArrowRight size={16} aria-hidden />
             </Link>
             <Link
               href={hero.secondaryCta.href}
-              className="flex items-center gap-2 border border-white/30 px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/5 sm:text-xs"
+              className="flex min-h-[44px] items-center gap-2 border border-white/30 px-6 py-3 text-cap font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/5 sm:text-xs"
             >
               {hero.secondaryCta.label} <ArrowRight size={16} aria-hidden />
             </Link>

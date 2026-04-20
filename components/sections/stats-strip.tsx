@@ -23,7 +23,7 @@ export function StatsStrip() {
                 <div className="text-2xl font-black tracking-tight text-brand-green lg:text-3xl">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white sm:text-xs">
+                <div className="mt-1 text-label font-bold uppercase tracking-widest text-white sm:text-xs">
                   {stat.label}
                 </div>
               </div>

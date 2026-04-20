@@ -16,7 +16,7 @@ export function Nav() {
   return (
     <nav
       aria-label="Hauptnavigation"
-      className="hidden items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-white lg:flex"
+      className="hidden items-center gap-8 text-cap font-bold uppercase tracking-widest text-white lg:flex"
     >
       {content.nav.map(({ href, label }) => {
         const active = linkActive(pathname, href);

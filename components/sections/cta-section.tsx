@@ -14,7 +14,7 @@ export function CtaSection() {
   return (
     <section className="mx-auto w-full max-w-container px-6 pb-24 lg:px-12">
       <div className="relative flex w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-bg-card md:flex-row">
-        <div className="absolute bottom-0 left-0 top-0 w-1/2 overflow-hidden opacity-40 mix-blend-screen md:w-1/3">
+        <div className="absolute bottom-0 left-0 top-0 w-full overflow-hidden opacity-40 mix-blend-screen md:w-1/3">
           <Image
             src={marketingCtaGlobeImage}
             alt={cta.imageAlt}
@@ -44,7 +44,7 @@ export function CtaSection() {
           <div>
             <Link
               href={cta.button.href}
-              className="flex flex-shrink-0 items-center gap-2 px-8 py-4 text-xs font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90"
+              className="flex min-h-[44px] flex-shrink-0 items-center gap-2 px-8 py-4 text-cap font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90"
               style={{ backgroundImage: gradients.greenCta }}
             >
               {cta.button.label} <ArrowRight size={16} aria-hidden />
