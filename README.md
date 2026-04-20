@@ -7,6 +7,12 @@ Aktueller Projektstatus der Website nach Figma-Integration und technischer Stabi
 - [Projektstatus](docs/status/PROJECT_STATUS.md)
 - [Work Session](docs/status/WORK_SESSION.md)
 
+## Deployment-Hinweis
+
+- Die lauffaehige Next.js-App liegt aktuell im Repository-Root.
+- `apps/website/` ist derzeit kein eigenstaendiges deploybares Next.js-Projekt.
+- Fuer Vercel muss die Root Directory auf das Repository-Root (`.`) zeigen.
+
 ## Status
 
 - Website basiert auf Next.js App Router.
